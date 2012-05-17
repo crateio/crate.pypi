@@ -15,7 +15,7 @@ from django.utils.translation import ugettext as _
 from django.views.decorators.cache import cache_page
 from django.views.generic.detail import DetailView
 
-from packages.models import ReleaseFile
+from crate.web.packages.models import ReleaseFile
 from crate.pypi.models import PyPIMirrorPage, PyPIServerSigPage, PyPIIndexPage
 
 PYPI_SINCE_KEY = "crate:pypi:since"

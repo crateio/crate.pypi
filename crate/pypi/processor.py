@@ -16,9 +16,9 @@ from django.core.files.base import ContentFile
 from django.db import transaction
 from django.utils.timezone import utc
 
-from history.models import Event
-from packages.models import Package, Release, TroveClassifier
-from packages.models import ReleaseRequire, ReleaseProvide, ReleaseObsolete, ReleaseURI, ReleaseFile
+from crate.web.history.models import Event
+from crate.web.packages.models import Package, Release, TroveClassifier
+from crate.web.packages.models import ReleaseRequire, ReleaseProvide, ReleaseObsolete, ReleaseURI, ReleaseFile
 from crate.pypi.exceptions import PackageHashMismatch
 from crate.pypi.models import PyPIMirrorPage, PyPIServerSigPage
 from crate.pypi.utils.serversigs import load_key, verify

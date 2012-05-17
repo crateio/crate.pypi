@@ -17,7 +17,7 @@ from django.db import transaction
 from django.utils.timezone import now
 
 from crate.utils.lock import Lock
-from packages.models import Package, ReleaseFile, TroveClassifier, DownloadDelta
+from crate.web.packages.models import Package, ReleaseFile, TroveClassifier, DownloadDelta
 from crate.pypi.models import PyPIIndexPage, PyPIDownloadChange
 from crate.pypi.processor import PyPIPackage
 
