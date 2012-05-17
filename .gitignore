@@ -1,4 +1,33 @@
+.py[co]
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+
+#Translations
+*.mo
+
+#Mr Developer
+.mr.developer.cfg
+
+# site_media
 crateweb/site_media/
+
+# Gondor Site Key
 .gondor/site_key
-celeryev.pid
-*.pyc
