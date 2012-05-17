@@ -18,8 +18,8 @@ from django.utils.timezone import now
 
 from crate.utils.lock import Lock
 from packages.models import Package, ReleaseFile, TroveClassifier, DownloadDelta
-from pypi.models import PyPIIndexPage, PyPIDownloadChange
-from pypi.processor import PyPIPackage
+from crate.pypi.models import PyPIIndexPage, PyPIDownloadChange
+from crate.pypi.processor import PyPIPackage
 
 logger = logging.getLogger(__name__)
 

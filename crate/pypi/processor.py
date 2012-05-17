@@ -19,9 +19,9 @@ from django.utils.timezone import utc
 from history.models import Event
 from packages.models import Package, Release, TroveClassifier
 from packages.models import ReleaseRequire, ReleaseProvide, ReleaseObsolete, ReleaseURI, ReleaseFile
-from pypi.exceptions import PackageHashMismatch
-from pypi.models import PyPIMirrorPage, PyPIServerSigPage
-from pypi.utils.serversigs import load_key, verify
+from crate.pypi.exceptions import PackageHashMismatch
+from crate.pypi.models import PyPIMirrorPage, PyPIServerSigPage
+from crate.pypi.utils.serversigs import load_key, verify
 
 logger = logging.getLogger(__name__)
 

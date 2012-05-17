@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from pypi.models import PyPIMirrorPage, PyPIServerSigPage, PyPIIndexPage
-from pypi.models import PyPIDownloadChange
+from crate.pypi.models import PyPIMirrorPage, PyPIServerSigPage, PyPIIndexPage
+from crate.pypi.models import PyPIDownloadChange
 
 
 class PyPIMirrorPageAdmin(admin.ModelAdmin):

@@ -16,7 +16,7 @@ from django.views.decorators.cache import cache_page
 from django.views.generic.detail import DetailView
 
 from packages.models import ReleaseFile
-from pypi.models import PyPIMirrorPage, PyPIServerSigPage, PyPIIndexPage
+from crate.pypi.models import PyPIMirrorPage, PyPIServerSigPage, PyPIIndexPage
 
 PYPI_SINCE_KEY = "crate:pypi:since"
 
