@@ -82,7 +82,7 @@ class Migration(SchemaMigration):
             'modified': ('model_utils.fields.AutoLastModifiedField', [], {'default': 'datetime.datetime(2012, 1, 8, 3, 18, 57, 381027)'}),
             'package': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'releases'", 'to': "orm['packages.Package']"}),
             'platform': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
-            'raw_data': ('crate.fields.json.JSONField', [], {'null': 'True'}),
+            'raw_data': ('django.db.models.fields.TextField', [], {'null': 'True'}),
             'requires_python': ('django.db.models.fields.CharField', [], {'max_length': '25', 'blank': 'True'}),
             'summary': ('django.db.models.fields.TextField', [], {}),
             'version': ('django.db.models.fields.CharField', [], {'max_length': '512'})
