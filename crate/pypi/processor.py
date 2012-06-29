@@ -490,8 +490,6 @@ class PyPIPackage(object):
             key = load_key(serverkey.content)
             self.datastore.set(SERVERKEY_KEY, serverkey.content)
 
-        print self.name
-
         try:
             # Download the "simple" page from PyPI for this package
             simple = requests.get(urlparse.urljoin(SIMPLE_URL, urllib.quote(self.name)), prefetch=True)
@@ -500,6 +498,9 @@ class PyPIPackage(object):
             if simple.status_code == 404:
                 return {"has_sig": False}
             raise
+        except ValueError:
+            logger.exception("Got a ValueError from downloading the Simple page")
+            return {"has_sig": False}
 
         try:
             # Download the "serversig" page from PyPI for this package
