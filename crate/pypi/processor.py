@@ -490,6 +490,8 @@ class PyPIPackage(object):
             key = load_key(serverkey.content)
             self.datastore.set(SERVERKEY_KEY, serverkey.content)
 
+        print self.name
+
         try:
             # Download the "simple" page from PyPI for this package
             simple = requests.get(urlparse.urljoin(SIMPLE_URL, urllib.quote(self.name)), prefetch=True)
