@@ -377,10 +377,6 @@ class PyPIPackage(object):
                 for release_file in ReleaseFile.objects.filter(release=release, filename__in=[x["filename"] for x in data["files"]]).select_for_update():
                     file_data = [x for x in data["files"] if x["filename"] == release_file.filename][0]
 
-                    if pypi_pages.get("has_sig"):
-                        if verified_md5_hashes[file_data["file"]].lower() != file_data["digests"]["md5"].lower():
-                            raise Exception("MD5 does not match simple API md5 [Verified by ServerSig]")  # @@@ Custom Exception
-
                     datastore_key = "crate:pypi:download:%(url)s" % {"url": file_data["file"]}
                     stored_file_data = self.datastore.hgetall(datastore_key)
 
