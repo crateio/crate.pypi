@@ -488,7 +488,7 @@ class PyPIPackage(object):
 
         try:
             # Download the "simple" page from PyPI for this package
-            simple = requests.get(urlparse.urljoin(SIMPLE_URL, urllib.quote(self.name)), prefetch=True)
+            simple = requests.get(urlparse.urljoin(SIMPLE_URL, urllib.quote(self.name.encode("utf-8"))), prefetch=True)
             simple.raise_for_status()
         except requests.HTTPError:
             if simple.status_code == 404:
@@ -500,7 +500,7 @@ class PyPIPackage(object):
 
         try:
             # Download the "serversig" page from PyPI for this package
-            serversig = requests.get(urlparse.urljoin(SERVERSIG_URL, urllib.quote(self.name)), prefetch=True)
+            serversig = requests.get(urlparse.urljoin(SERVERSIG_URL, urllib.quote(self.name.encode("utf-8"))), prefetch=True)
             serversig.raise_for_status()
         except requests.HTTPError:
             if serversig.status_code == 404:
