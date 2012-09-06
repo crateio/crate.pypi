@@ -102,7 +102,7 @@ def synchronize(since=None):
             changes = pypi.changelog(since)
 
             for name, version, timestamp, action in changes:
-                line_hash = hashlib.sha256(":".join([str(x) for x in (name, version, timestamp, action)])).hexdigest()
+                line_hash = hashlib.sha256(u":".join([unicode(x) for x in (name, version, timestamp, action)]).encode("utf-8")).hexdigest()
                 logdata = {"action": action, "name": name, "version": version, "timestamp": timestamp, "hash": line_hash}
 
                 if not datastore.exists("crate:pypi:changelog:%s" % line_hash):
