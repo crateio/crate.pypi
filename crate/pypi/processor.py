@@ -359,17 +359,17 @@ class PyPIPackage(object):
 
         for data in self.data.values():
             try:
-                if pypi_pages.get("has_sig"):
-                    simple_html = lxml.html.fromstring(pypi_pages["simple"])
-                    simple_html.make_links_absolute(urlparse.urljoin(SIMPLE_URL, data["package"]) + "/")
+                # if pypi_pages.get("has_sig"):
+                #     simple_html = lxml.html.fromstring(pypi_pages["simple"])
+                #     simple_html.make_links_absolute(urlparse.urljoin(SIMPLE_URL, data["package"]) + "/")
 
-                    verified_md5_hashes = {}
+                #     verified_md5_hashes = {}
 
-                    for link in simple_html.iterlinks():
-                            m = _md5_re.search(link[2])
-                            if m:
-                                url, md5_hash = m.groups()
-                                verified_md5_hashes[url] = md5_hash
+                #     for link in simple_html.iterlinks():
+                #             m = _md5_re.search(link[2])
+                #             if m:
+                #                 url, md5_hash = m.groups()
+                #                 verified_md5_hashes[url] = md5_hash
 
                 package = Package.objects.get(name=data["package"])
                 release = Release.objects.filter(package=package, version=data["version"]).select_for_update()
