@@ -520,7 +520,7 @@ class PyPIPackage(object):
             logger.exception("Exception trying to verify %s" % self.name)  # @@@ Figure out a better way to handle this
 
         try:
-            package = Package.objects.get(name=self.name)
+            package = Package.objects.get(normalized_name=re.sub('[^A-Za-z0-9.]+', '-', self.name).lower())
         except Package.DoesNotExist:
             logger.exception("Error Trying To Verify %s (Querying Package)" % self.name)
             return
